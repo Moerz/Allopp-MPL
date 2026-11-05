@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "allopp-mpl"
+version = "0.1.0"
+description = "Allopolyploid species-network inference with a known number of reticulations (Allopp-MPL)"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+dependencies = [
+    "phynetpy @ git+https://github.com/NakhlehLab/PhyNetPy.git@b3a1a411bb32a86f2136285c0fd928719be97533",
+    "numpy>=1.26,<3",
+    "scipy>=1.11,<2",
+    "networkx>=3.2,<4",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+allopp-mpl = "allopp_mpl.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

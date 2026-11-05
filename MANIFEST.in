@@ -1,0 +1,6 @@
+include README.md
+include LICENSE
+include THIRD_PARTY_NOTICES.md
+recursive-include examples *.json *.nwk
+recursive-include tests *.py
+
